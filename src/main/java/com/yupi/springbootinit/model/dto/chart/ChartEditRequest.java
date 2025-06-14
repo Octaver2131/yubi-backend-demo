@@ -17,6 +17,12 @@ import java.util.List;
  */
 @Data
 public class ChartEditRequest implements Serializable {
+
+    /**
+     * 分析目标
+     */
+    private String name;
+
     /**
      * id
      */
