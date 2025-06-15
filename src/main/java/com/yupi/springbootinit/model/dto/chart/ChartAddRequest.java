@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class ChartAddRequest implements Serializable {
 
     /**
-     * 分析目标
+     * 名称
      */
     private String name;
 
