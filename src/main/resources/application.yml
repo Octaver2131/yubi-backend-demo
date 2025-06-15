@@ -87,3 +87,14 @@ cos:
     secretKey: xxx
     region: xxx
     bucket: xxx
+# 鱼聪明 AI 配置（https://yucongming.com/）
+yuapi:
+  client:
+    access-key: 替换为你自己的 access-key
+    secret-key: 替换为你自己的 secret-key
+# 腾讯云 DeepSeek 服务
+tencent:
+  deepseek:
+    client:
+      secret-id: AKIDEKFyZzFOL70teGn8IH4e8QVYTFMOEyUr
+      secret-key: FMKApGVZR6Yr9FC1hEZ1PjtqdFiy1ufL
