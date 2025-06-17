@@ -3,8 +3,9 @@ package com.yupi.springbootinit.controller;
 import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -30,7 +31,7 @@ public class QueueController {
     @GetMapping("/add")
     public void add(String name) {
         CompletableFuture.runAsync(() -> {
-            log.info("任务执行中" + name + "执行人：" + Thread.currentThread().getName());
+            log.info("任务执行中：" + name + "，执行人：" + Thread.currentThread().getName());
             try {
                 Thread.sleep(600000);
             } catch (InterruptedException e) {
@@ -48,7 +49,7 @@ public class QueueController {
         map.put("任务总数", taskCount);
         long completedTaskCount = threadPoolExecutor.getCompletedTaskCount();
         map.put("已完成任务数", completedTaskCount);
-        long activeCount = threadPoolExecutor.getActiveCount();
+        int activeCount = threadPoolExecutor.getActiveCount();
         map.put("正在工作的线程数", activeCount);
         return JSONUtil.toJsonStr(map);
     }

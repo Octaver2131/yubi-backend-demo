@@ -1,5 +1,6 @@
 package com.yupi.springbootinit.config;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,8 +18,9 @@ public class ThreadPoolExecutorConfig {
         ThreadFactory  threadFactory = new ThreadFactory() {
 
             private int count = 1;
+
             @Override
-            public Thread newThread(Runnable r) {
+            public Thread newThread(@NotNull Runnable r) {
                 Thread thread = new Thread(r);
                 thread.setName("线程" + count++);
                 return thread;
