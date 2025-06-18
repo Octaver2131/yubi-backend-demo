@@ -18,11 +18,11 @@ public class FanoutConsumer {
     // 声明交换机
     channel1.exchangeDeclare(EXCHANGE_NAME, "fanout");
     // 创建队列，随机分配一个队列名称
-    String queueName1 = "1_queue";
+    String queueName1 = "F1_queue";
     channel1.queueDeclare(queueName1, true, false, false, null);
     channel1.queueBind(queueName1, EXCHANGE_NAME, "");
 
-    String queueName2 = "2_queue";
+    String queueName2 = "F2_queue";
     channel2.queueDeclare(queueName2, true, false, false, null);
     channel2.queueBind(queueName2, EXCHANGE_NAME, "");
 
