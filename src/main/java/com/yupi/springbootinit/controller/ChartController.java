@@ -41,7 +41,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * 帖子接口
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
+ * @author <a href="https://github.com/Octaver2131">Octaver</a>
+ * @tutor <a href="https://github.com/liyupi">程序员鱼皮</a>>
  * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
 @RestController
@@ -310,6 +311,7 @@ public class ChartController {
         chart.setChartType(chartType);
         chart.setGenChart(genChart);
         chart.setGenResult(genResult);
+        chart.setStatus("succeed");
         chart.setUserId(loginUser.getId());
         boolean saveResult = chartService.save(chart);
         ThrowUtils.throwIf(!saveResult, ErrorCode.SYSTEM_ERROR, "图表保存失败");
@@ -475,12 +477,12 @@ public class ChartController {
 //                "【【【【【\n" +
 //                "{前端 Echarts V5 的 option 配置对象js代码，合理地将数据进行可视化，不要生成任何多余的内容，比如注释}\n" +
 //                "【【【【【\n" +
-//                "{明确的数据分析结论、越详细越好，不要生成多余的注释}";
+//                "{明确的数据分析结论、越详细越好，不要生成多余的注释}";r
         long biModelId = 1659171950288818178L;
         // 分析需求：
         // 分析网站用户的增长情况
         // 原始数据：
-        // 日期,用户数
+        // 日期,用户数r
         // 1号,10
         // 2号,20
         // 3号,30
