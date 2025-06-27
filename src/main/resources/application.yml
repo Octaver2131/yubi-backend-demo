@@ -42,7 +42,7 @@ spring:
       max-file-size: 10MB
   rabbitmq:
     host: localhost
-    pots: 5672
+    port: 5672
     username: guest
     password: guest
 server:
